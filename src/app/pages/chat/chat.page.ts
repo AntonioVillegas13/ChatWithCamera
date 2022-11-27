@@ -28,12 +28,17 @@ export class ChatPage implements OnInit {
     this.messages = this.chatService.getChatMessages();
   }
 
+
+
+  
   sendMessage() {
     this.chatService.addChatMessage(this.newMsg).then(() => {
       this.newMsg = '';
       this.content.scrollToBottom();
     });
   }
+
+
  
   signOut() {
     this.chatService.signOut().then(() => {

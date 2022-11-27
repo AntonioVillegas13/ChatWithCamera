@@ -1,8 +1,9 @@
 <ion-header>
   <ion-toolbar color="tertiary">
-      <ion-avatar slot="start" class="avatarChat">
-        <img alt="Silhouette of a person's head" src="https://pbs.twimg.com/profile_images/1082827529734553600/9GDYcEPg_400x400.jpg" />
-      </ion-avatar>
+    <ion-avatar slot="start" class="avatarChat">
+      <img alt="Silhouette of a person's head"
+        src="https://pbs.twimg.com/profile_images/1082827529734553600/9GDYcEPg_400x400.jpg" />
+    </ion-avatar>
     <ion-title>Chat Grupal Grupo 10</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="signOut()">
@@ -11,23 +12,29 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content class="ion-padding">
- 
+
   <ion-grid>
     <ion-row *ngFor="let message of messages | async">
-      <ion-col size="9" class="message"
-        [offset]="message.myMsg ? 3 : 0"
+      <ion-col size="9" class="message" [offset]="message.myMsg ? 3 : 0"
         [ngClass]="{ 'my-message': message.myMsg, 'other-message': !message.myMsg }">
         <b style="color: rgb(71, 68, 66);">{{ message.fromName }}</b><br>
         <span style="color: black;">{{ message.msg }}</span>
         <div class="time ion-text-right"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
       </ion-col>
-      
+
     </ion-row>
-    <ion-col size="2" *ngFor="let photo of photoService.photos; index as position">
-      <ion-img [src]="photo.webviewPath" ></ion-img>
+
+
+    <ion-col size="2" *ngFor="let photo of photoService.photos; index as position" class="message">
+      <ion-img width="80" height="80" [src]="photo.webviewPath"></ion-img>
+
+
     </ion-col>
+
+
+
   </ion-grid>
 </ion-content>
 
@@ -35,12 +42,12 @@
   <ion-toolbar color="light">
     <ion-row class="ion-align-items-center">
       <ion-col size="10">
-        <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="newMsg" >
+        <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="newMsg">
         </ion-textarea>
       </ion-col>
       <ion-col size="2">
-        <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''"
-          class="msg-btn" (click)="sendMessage()">
+        <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn"
+          (click)="sendMessage()">
           <ion-icon name="send" slot="icon-only"></ion-icon>
         </ion-button>
         <ion-content>
