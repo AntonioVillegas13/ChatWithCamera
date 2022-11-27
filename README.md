@@ -59,15 +59,3 @@ App creada usando [Ionic framework](https://ionicframework.com/docs), usando una
 * Enviar mensaje: Formulario y botón para el envío.
 * Los mensajes serán almacenados cifrados.
 
-## 📦 APK
-
-* [Descargar](https://epnecuador-my.sharepoint.com/:u:/g/personal/miguel_jurado_epn_edu_ec/EVx0tEFp0PNOsBRwAiYJqjYB8bfGShuWYDbnU4TaQiPmXA?e=xxmlM0)
-
-## :clap: Inspiración
-
-* Proyecto inspirado en [Simon Grimm´s Web Page devdactic 'Building an Ionic Firebase Chat with Authentication'](https://devdactic.com/ionic-firebase-chat/)
-
-## :envelope: Contacto 
-
-* Repo creado por [Miguel - 0988185518]
-
