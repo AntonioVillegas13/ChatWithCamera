@@ -23,7 +23,11 @@
         <span style="color: black;">{{ message.msg }}</span>
         <div class="time ion-text-right"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
       </ion-col>
+      
     </ion-row>
+    <ion-col size="2" *ngFor="let photo of photoService.photos; index as position">
+      <ion-img [src]="photo.webviewPath" ></ion-img>
+    </ion-col>
   </ion-grid>
 </ion-content>
 
