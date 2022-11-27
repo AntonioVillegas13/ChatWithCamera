@@ -1,0 +1,7 @@
+{
+  "name": "Test_2020B_FirstB",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

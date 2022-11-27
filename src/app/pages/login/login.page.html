@@ -1,0 +1,58 @@
+<ion-header >
+  <ion-toolbar color="primary" >
+    <ion-title class="ion-text-center">Iniciar Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-card style="width: 325px; height: 1000px;">
+
+  <ion-img style="margin: 0 auto; width: 200px; height: 200px;" src="assets/mes.png"></ion-img>
+  <ion-card-content>
+    <ion-card-title class="ion-text-center" >
+      BIENVENIDO
+    </ion-card-title>
+    <br>
+    <form [formGroup]="credentialForm">
+      <ion-item>
+        <ion-input
+          placeholder="Correro electrónico"
+          formControlName="email"
+          autofocus="true"
+          clearInput="true"
+        ></ion-input>
+      </ion-item>
+      <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors" >
+        <span *ngIf="email.errors?.required">Se requiere de un correro electrónico </span>
+        <span *ngIf="email.errors?.email">El correo es invlido</span>
+      </div>
+   
+      <ion-item>
+        <ion-input
+        placeholder="Contraseña"
+        type="password"
+        formControlName="password"
+        clearInput="true"
+      ></ion-input>
+      </ion-item>
+      <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Requiere de una contraseña</span>
+        <span *ngIf="password.errors?.minlength">La contraseña debe contener 6 caracteres</span>
+      </div>
+    </form>
+    <br>
+
+    <!-- <ion-button (click)="signUp()" expand="full" color="warning">Sing up</ion-button> -->
+    
+    <!-- <ion-button (click)="signIn()" expand="full" color="success">Sing in</ion-button> -->
+    <ion-button type="submit" color="primary" (click)="signIn()" expand="full">
+      INICIAR SESION
+    </ion-button>
+    
+    <ion-button type="submit" color="secondary" (click)="signUp()" expand="full">
+      REGISTRARSE
+    </ion-button>
+
+    <br>
+    
+  </ion-card-content>
+</ion-card>
