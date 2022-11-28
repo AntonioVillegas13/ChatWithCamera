@@ -49,11 +49,13 @@ export class PhotoService {
 
 
     }
+    
 
 
     );
+    this.photos.slice(-1)
 
-    const filePath = "gola3";
+    const filePath = "1";
     // Crea una referencia de acceso
     const fileRef = this.storage.ref(filePath);
 
@@ -62,9 +64,9 @@ export class PhotoService {
     })
 
     console.log(capturedPhoto.base64String)
+
+    
   }
-
-
 
 
 
